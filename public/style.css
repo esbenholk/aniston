@@ -113,6 +113,7 @@ h3:hover {
   opacity: 1;
 }
 h1 {
+  font-size: 2vw;
   color: white;
   font-family: "friends";
 }
@@ -218,6 +219,6 @@ footer {
   position: fixed;
   bottom: 0;
   right: 0;
-  margin: 10px;
+  margin: 2px;
   z-index: 99999999999999;
 }
