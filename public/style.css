@@ -1,161 +1,223 @@
 @font-face {
-    font-family: "friends"; /*a name to be used later*/
-    src: url("GABRWFFR.TTF"); /*URL to font*/
+  font-family: "friends";
+  src: url("//db.onlinewebfonts.com/t/0b7d8a39b62b28cf0cfe3cea90b8baa3.eot");
+  src: url("//db.onlinewebfonts.com/t/0b7d8a39b62b28cf0cfe3cea90b8baa3.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/0b7d8a39b62b28cf0cfe3cea90b8baa3.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/0b7d8a39b62b28cf0cfe3cea90b8baa3.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/0b7d8a39b62b28cf0cfe3cea90b8baa3.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/0b7d8a39b62b28cf0cfe3cea90b8baa3.svg#Gabriel Weiss' Friends Font")
+      format("svg");
 }
 @keyframes gradientAnimator {
-    0% {
-        background-position: 34% 0%;
-    }
-    50% {
-        background-position: 67% 100%;
-    }
-    100% {
-        background-position: 34% 0%;
-    }
+  0% {
+    background-position: 34% 0%;
+  }
+  50% {
+    background-position: 67% 100%;
+  }
+  100% {
+    background-position: 34% 0%;
+  }
 }
 /* main layout */
+
 body {
-    box-sizing: border-box;
-    background: linear-gradient(
-        180deg,
-        #89ffd2,
-        #e9ff89,
-        #89fffb,
-        white,
-        #89ffd2
-    );
-    background-size: 100% 10000%;
-    animation: gradientAnimator 40s ease infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  box-sizing: border-box;
+  background: radial-gradient(
+    circle,
+    rgba(233, 255, 0, 1) 0%,
+    rgba(250, 0, 255, 1) 36%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientAnimator 40s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #frontpage {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 10px;
-    left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 10px;
+  left: 0;
 }
 
 #frame {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 99999999999;
-    pointer-events: none;
-    /* -webkit-animation: glow 10s ease-in-out infinite alternate;
-    -moz-animation: glow 10s ease-in-out infinite alternate;
-    animation: glow 10s ease-in-out infinite alternate; */
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99999999999;
+  pointer-events: none;
 }
 @-webkit-keyframes glow {
-    from {
-        box-shadow: inset 0 0 50px #ffe900,
-            /* inner white */ inset 20px 0 80px #f0f,
-            /* inner left magenta short */ inset -20px 0 80px #0ff,
-            /* inner right cyan short */ inset 10px 0 10px #f0f,
-            /* inner left magenta broad */ inset -20px 0 3px #0ff,
-            /* inner right cyan broad */ 0 0 100px #ffe900,
-            /* outer white */ -10px 0 80px #f0f,
-            /* outer left magenta */ 10px 0 10px #0ff; /* outer right cyan */
-    }
-    to {
-        box-shadow: inset 0 0 50px #ffe900,
-            /* inner white */ inset 10px 0 10px #f0f,
-            /* inner left magenta short */ inset -20px 0 80px #0ff,
-            /* inner right cyan short */ inset 20px 0 10px #f0f,
-            /* inner left magenta broad */ inset -20px 0 10px #0ff,
-            /* inner right cyan broad */ 0 0 10px #ffe900,
-            /* outer white */ -10px 0 80px #f0f,
-            /* outer left magenta */ 10px 0 10px #0ff; /* outer right cyan */
-    }
+  from {
+    box-shadow: inset 0 0 50px #ffe900, /* inner white */ inset 20px 0 80px #f0f,
+      /* inner left magenta short */ inset -20px 0 80px #0ff,
+      /* inner right cyan short */ inset 10px 0 10px #f0f,
+      /* inner left magenta broad */ inset -20px 0 3px #0ff,
+      /* inner right cyan broad */ 0 0 100px #ffe900,
+      /* outer white */ -10px 0 80px #f0f,
+      /* outer left magenta */ 10px 0 10px #0ff; /* outer right cyan */
+  }
+  to {
+    box-shadow: inset 0 0 50px #ffe900, /* inner white */ inset 10px 0 10px #f0f,
+      /* inner left magenta short */ inset -20px 0 80px #0ff,
+      /* inner right cyan short */ inset 20px 0 10px #f0f,
+      /* inner left magenta broad */ inset -20px 0 10px #0ff,
+      /* inner right cyan broad */ 0 0 10px #ffe900,
+      /* outer white */ -10px 0 80px #f0f,
+      /* outer left magenta */ 10px 0 10px #0ff; /* outer right cyan */
+  }
 }
 /* general */
-.coverimage {
-    width: 100%;
-    height: 100%;
-    display: cover;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
+.cover {
+  width: 50%;
+  height: 50%;
+  display: cover;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+.coverimage {
+  width: 100%;
+  border-radius: 5%;
+}
+h3 {
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 40px;
+  color: white;
+  font-family: "friends";
+  display: cover;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  opacity: 0;
+}
+h3:hover {
+  opacity: 1;
+}
+h1 {
+  color: white;
+  font-family: "friends";
+}
+.cover:hover {
+  -webkit-animation: glow 10s ease-in-out infinite alternate;
+  -moz-animation: glow 10s ease-in-out infinite alternate;
+  animation: glow 10s ease-in-out infinite alternate;
+}
+
+#blocker {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 212, 255, 0.5);
+}
+
+#instructions {
+  width: 70%;
+  height: 50%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: #ffffff;
+  text-align: center;
+  font-family: Arial;
+  font-size: 35px;
+  line-height: 40px;
+  cursor: pointer;
+}
+.play {
+  font-size: 40px;
+}
+
 .coverimagetop {
-    pointer-events: none;
-    z-index: 99999999999999;
+  pointer-events: none;
+  z-index: 99999999999999;
 }
 .headlines {
-    white-space: nowrap;
-    position: absolute;
-    z-index: 8;
-    font-size: 80px;
-    font-family: "friends";
-    left: 100%;
+  white-space: nowrap;
+  position: absolute;
+  z-index: 8;
+  font-size: 80px;
+  font-family: monospace;
+  left: 0;
 }
 
-a {
-    padding-right: 40px;
-    text-decoration: none;
-    color: white;
-}
-
-a:hover {
-    color: yellow;
-    text-decoration: underline;
-}
+/* a {
+  padding-right: 40px;
+  text-decoration: none;
+  color: white;
+} */
 
 #ticker1 {
-    position: relative;
-    overflow: hidden;
-    height: 80px;
+  position: relative;
+  overflow: hidden;
+  height: 90px;
 }
 #ticker2 {
-    position: relative;
-    overflow: hidden;
-    height: 80px;
+  position: relative;
+  overflow: hidden;
+  height: 90px;
 }
 #ticker3 {
-    position: relative;
-    overflow: hidden;
-    height: 80px;
+  position: relative;
+  overflow: hidden;
+  height: 90px;
 }
 #ticker4 {
-    position: relative;
-    overflow: hidden;
-    height: 80px;
+  position: relative;
+  overflow: hidden;
+  height: 90px;
 }
 #ticker5 {
-    position: relative;
-    overflow: hidden;
-    height: 80px;
+  position: relative;
+  overflow: hidden;
+  height: 90px;
 }
 #ticker6 {
-    position: relative;
-    overflow: hidden;
-    height: 80px;
+  position: relative;
+  overflow: hidden;
+  height: 90px;
 }
 #ticker7 {
-    position: relative;
-    overflow: hidden;
-    height: 80px;
+  position: relative;
+  overflow: hidden;
+  height: 90px;
 }
 #ticker8 {
-    position: relative;
-    overflow: hidden;
-    height: 80px;
+  position: relative;
+  overflow: hidden;
+  height: 90px;
 }
 #ticker9 {
-    position: relative;
-    overflow: hidden;
-    height: 80px;
+  position: relative;
+  overflow: hidden;
+  height: 90px;
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    margin: 10px;
-    z-index: 99999999999999;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  z-index: 99999999999999;
 }
