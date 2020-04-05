@@ -142,8 +142,8 @@ h1 {
   color: #ffffff;
   text-align: center;
   font-family: Arial;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 1vw;
+  line-height: auto;
   cursor: pointer;
 }
 .play {
@@ -216,6 +216,7 @@ h1 {
 }
 
 footer {
+  font-size: 5px;
   position: fixed;
   bottom: 0;
   right: 0;
