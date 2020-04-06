@@ -351,7 +351,7 @@
 								opacity: 0.4,
 								side: THREE.DoubleSide
 							} );
-						var shapes = font.generateShapes( inputtext, Math.floor(Math.random() * 10));
+						var shapes = font.generateShapes( inputtext, Math.floor(Math.random() * 5));
 						var geometry = new THREE.ShapeBufferGeometry( shapes );
 						geometry.computeBoundingBox();
 						xMid = - 0.5 * ( geometry.boundingBox.max.x - geometry.boundingBox.min.x );
