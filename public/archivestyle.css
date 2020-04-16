@@ -1,0 +1,29 @@
+@keyframes gradientAnimator {
+  0% {
+    background-position: 34% 0%;
+  }
+  50% {
+    background-position: 67% 100%;
+  }
+  100% {
+    background-position: 34% 0%;
+  }
+}
+/* main layout */
+
+body {
+  box-sizing: border-box;
+  background: linear-gradient(
+    180deg,
+    #00fffd,
+    #00ff1b,
+    #fff500,
+    #f390ff,
+    #00ffe6
+  );
+  background-size: 400% 400%;
+  animation: gradientAnimator 40s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
