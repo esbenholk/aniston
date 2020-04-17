@@ -81,10 +81,24 @@ body {
 /* general */
 
 h1 {
-  font-size: 1vw;
+  font-size: 3vw;
+  width: 100%;
   color: white;
+  background-color: black;
+  text-align: center;
 }
-
+#frontpagetext {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999999;
+}
+.frontpagevideo {
+  height: 100vh;
+  width: 100%;
+  filter: hue-rotate(150deg) invert(1);
+}
 #blocker {
   position: fixed;
   left: 0;
@@ -101,7 +115,7 @@ h1 {
   animation: gradientAnimator 40s ease infinite;
 }
 
-#instructions {
+/* #instructions {
   width: 70%;
   height: 50%;
   position: fixed;
@@ -114,7 +128,7 @@ h1 {
   font-size: 1vw;
   line-height: auto;
   cursor: pointer;
-}
+} */
 .play {
   font-size: 30px;
 }

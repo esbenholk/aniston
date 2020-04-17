@@ -53,7 +53,7 @@ app.get("/emojicon", (req, res) => {
     layout: "secondary"
   });
 });
-app.get("/clusterduckssuperinsane42020party", (req, res) => {
+app.get("/passthevirtualjoint", (req, res) => {
   res.render("livestream", {
     layout: "third"
   });
