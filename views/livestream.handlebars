@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>HOUSE OF KILLING</title>
+		<title>JOIN THE JOINT</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link type="text/css" rel="stylesheet" href="livestreamstyle.css">
@@ -147,15 +147,10 @@ connection.onstream = function(event) {
 
 };
 
-
-
-
-
-
 connection.onstreamended = function(event) {
   var mediaElement = document.getElementById(event.streamid);
   if (mediaElement) {
-	 console.log(mediaElement.parentNode);
+	console.log(mediaElement.parentNode);
 	mediaElement.parentNode.parentNode.removeChild(mediaElement.parentNode);
   }
 };
