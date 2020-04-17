@@ -4,45 +4,388 @@
 		<title>HOUSE OF KILLING</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<link type="text/css" rel="stylesheet" href="archivestyle.css">
 		<style>
-            #video{
-                display: none;
+            body{
+                background-color: black;
+				height: 100vh;
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
             }
-            #chat{
 
-                position: fixed;
+			/* //intro blocker */
+            #blocker {
+              position: fixed;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              background-color: rgba(0,0,0,1);
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+			  z-index: 2;
+            }
+            #instructions {
+              width: 70%;
+              height: 50%;
+              position: fixed;
+              left: 50%;
+              top: 20%;
+              transform: translateX(-50%);
+              color: #ffffff;
+              text-align: center;
+              font-family: Arial;
+              font-size: 1vw;
+              line-height: auto;
+              cursor: pointer;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+            }
+			#coverpic{
+				height: 120%;
+				animation: minimove 4s infinite;
+			}
+            #inputform{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+				display: none;
+				position: fixed;
+				top: 10%;
+				left: 50%;
+				transform: translateX(-50%);
+            }
+            button{
+                background: blue;
+                border-radius: 10px;
+                width: 100px;
+                font-size: 20px;
+                font-weight: 1;
+                color: white;
+                border: none;
+            }
+			h1{
+				color: white;
+			}
+			#four42020{
+
+			}
+			.page{
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				/* justify-content: space-between;
+				align-items: flex-start;
+				margin: 5%; */
+			}
+			#logoes{
+				display: flex;
+				width: 100%;
+				flex-direction: row;
+				justify-content: space-between;
+				white-space: nowrap;
+				margin-top: 5%;
+				margin-left: 5%;
+				margin-right: 5%;
+				z-index: 1;
+
+			}
+			#cluster-felt{
+				display: flex;
+				white-space: nowrap;
+				width: 50%;
+				justify-content: flex-end;
+				align-items: flex-start;
+
+			}
+			#feltzine{
+				height: 15vh;
+			}
+
+			.logo{
+				height: 25vh;
+				display: inline-block;
+
+			}
+			/* //chat */
+			#chatcontainer{
+				display: flex;
+				justify-content: flex-end;
+				align-items: flex-end;
+				position: fixed;
+				bottom: 0;
+				right: 0;
+				margin: 5px;
+				z-index: 1;
+			}
+			#chat{
+                /* position: fixed;
                 bottom: 0;
                 right: 0;
+				margin: 5px; */
             }
+			#chatform{
+				max-width: 200px;
+				background-color: yellow;
+				display: flex;
+				white-space: nowrap;
+			}
+			#chattoggle{
+				/* height: 20px; */
+
+			}
+			#messages{
+				list-style: none;
+				color: yellow;
+				font-size: 15px;
+			}
+			li{
+				text-align: right;
+			}
+			/* ////joint and teletubbis */
+			.sunpart{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				bottom: 0;
+				left: 0;
+				min-width: 100px;
+
+			}
+
+			#joint{
+				display: inline-block;
+				postion: absolute;
+				bottom: 0;
+				left: 0;
+				display: flex;
+				white-space: nowrap;
+				animation: move 4s infinite;
+			}
+			@media only screen and (max-width: 600px) {
+				main{
+					height: 100vh;
+				}
+				#joint{
+				  display: inline-block;
+				  postion: absolute;
+				  left: 0;
+				  display: flex;
+				  white-space: nowrap;
+				  animation: move 4s infinite;
+			  }
+			}
+			#container{
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-end;
+				white-space: nowrap;
+				display: inline-block;
+			}
+			.jointparts{
+				display: inline-block;
+				height: 50vh;
+				position: relative;
+			}
+			.videoelement{
+				position: relative;
+				display: inline-block;
+				width: 150px;
+				height: 100%;
+				/* bottom: 180px; */
+			}
+			.teletubby{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.yellow{
+				width: 50%;
+				margin: 25%;
+				position: absolute;
+				top: 25%;
+				left: 0;
+				}
+			.blue{
+				width: 50%;
+				margin: 30%;
+				margin-left: 40%;
+				position: absolute;
+				top: 20%;
+				left: 0;
+			}
+			.green{
+				width: 40%;
+				margin: 30%;
+				margin-left: 30%;
+				position: absolute;
+				top: 20%;
+				left: 0;
+				}
+			.rosa{
+
+					width: 50%;
+					margin-left: 25%;
+					position: absolute;
+					top: 30%;
+					left: 0;
+
+			}
+
+			/* ////ticker credits */
+			.credits {
+	          white-space: nowrap;
+	          position: absolute;
+			  height: 100%;
+	          z-index: 8;
+	          font-family: "";
+			  width: 100%;
+	        }
+	        a {
+	          text-decoration: none;
+	          color: white;
+			  font-size: 10px;
+			  margin: 0;
+			  padding: 0;
+	        }
+			#tickercontainer {
+	          height: 20px;
+			  overflow: hidden;
+			  bottom: 0;
+			  position: fixed;
+			  left: 0;
+			  right: 0;
+			  width: 100%;
+
+	        }
+			#ticker{
+	          position: relative;
+	          height: 10px;
+	        }
+
+			/* ////animation */
+			@keyframes move {
+			  0% {
+			    margin-top: 0%;
+			  }
+			  50% {
+			    margin-top: -2%;
+			  }
+			  100% {
+			    margin-top: 0%;
+			  }
+			}
+			@keyframes minimove {
+			  0% {
+			    margin-top: 0;
+			  }
+			  50% {
+			    margin-top: 5%;
+			  }
+			  100% {
+			    margin-top: 0;
+			  }
+			}
+			/* ////invisibility togggles */
+			.visible{
+				visibility: visible;
+				display: inline-block;
+			}
+			.invisible{
+				visibility: hidden;
+				display: none;
+			}
+
+
 		</style>
+
 	</head>
 	<body>
-        <!-- <video id="video" class="video" autoplay></video> -->
-		<!-- <div id="blocker">
-
-			<div id="instructions">
-
-				enjoy yourself(ie)™<br/>
-
-				<span class="play">Click to play</span>
-				<br /><br />
-				Move: WASD<br/>
-				Jump: SPACE<br/>
-				Look: MOUSE<br/>
-                escape: ESC
+		<div class="page">
+			<div id="logoes">
+				<img class="logo" id="four42020" src="teletubby/42020.png"/>
+				<div id="cluster-felt">
+				<img class="logo" id="clusterdcuklogo" src="teletubby/ClusterduckLogo.png"/>
+				<img class="logo" id="feltzine" src="teletubby/feltzine.png"/>
+				</div>
 			</div>
-		</div> -->
-        <div id="chat">
+			<div id="joint">
+				<div class="jointparts">
+			     <img id="jointfront" class="jointparts sunpart" src="teletubby/top.png" alt="hiiiiiigh" />
+				 <img id="sun" class="jointparts sunpart" src="teletubby/sun.png" alt="hiiiiiigh" />
+				 </div>
+		        <div id="container" class="jointparts"></div>
+		        <img id="jointback" class="jointparts" src="teletubby/bottom.png" alt="hi" />
+			</div>
+		</div>
+		<div id="chatcontainer">
+			<button id="chattoggle">CHAT</button>
+	        <div id="chat" class="invisible">
+	            	<ul id="messages"></ul>
+	                <form action="" id="chatform" >
+	                  <input id="m" autocomplete="off" /><button id="chatbutton">Send</button>
+	                </form>
+	        </div>
+		</div>
 
-            <ul id="messages"></ul>
-                <form action="">
-                  <input id="m" autocomplete="off" /><button>Send</button>
-                </form>
-        </div>
-    <!-- <video id="localVideo" class="video1" playsinline muted></video> -->
-    <button id="btn-open-room">Open Room</button>
-    <button id="btn-join-room">Join Room</button><hr>
+		<div id="tickercontainer">
+	        <div id="ticker" class="ticker">
+		        <div class="credits">
+		            <a> credits credtis credits credits </a>
+					<a> credits credtis credits credits </a>
+					<a> credits credtis credits credits </a>
+					<a> credits credtis credits credits </a>
+					<a> credits credtis credits credits </a>
+					<a> credits credtis credits credits </a>
+					<a> credits credtis credits credits </a>
+					<a> credits credtis credits credits </a>
+					<a> credits credtis credits credits </a>
+					<a> credits credtis credits credits </a>
+					<a> credits credtis credits credits </a>
+					<a> credits credtis credits credits </a>
+					<a> credits credtis credits credits </a>
+					<a> credits credtis credits credits </a>
+					<a> credits credtis credits credits </a>
+
+		        </div>
+		     </div>
+
+		 </div>
+
+		<div id="blocker">
+			<div id="instructions">
+				<div id="inputform">
+			        <h1 id="space">
+			          name your space
+			          <input
+			            type="text"
+			            id="room-id"
+			            value="420"
+			            autocorrect="off"
+			            autocapitalize="off"
+			            size="20"
+			          />
+			        </h1>
+			        <div class="buttons">
+			        <button id="btn-open-room">Open Room</button>
+			        <button id="btn-join-room">Join Room</button>
+			        </div>
+		        </div>
+				<img id="coverpic" src="Join-the-Joint.png"/>
+			</div>
+		</div>
 
 
 
@@ -52,8 +395,13 @@
 <script src="https://rtcmulticonnection.herokuapp.com/dist/RTCMultiConnection.min.js"></script>
 <script src="https://rtcmulticonnection.herokuapp.com/socket.io/socket.io.js"></script>
 <script type="module">
+var blocker = document.getElementById( 'blocker' );
+var instructions = document.getElementById( 'instructions' );
+var inputform = document.getElementById('inputform');
+
+
 var connection = new RTCMultiConnection();
-connection.socketURL = 'localhost:8080/';
+connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
 connection.session = {
     audio: true,
     video: true
@@ -64,20 +412,124 @@ connection.sdpConstraints.mandatory = {
     OfferToReceiveVideo: true
 };
 
+let teletubbies = ["teletubby/rosa.png", "teletubby/blu.png", "teletubby/verde.png", "teletubby/giallo.png"]
 connection.onstream = function(event) {
-    document.body.appendChild( event.mediaElement );
+    let container =document.getElementById('container');
+	let img = document.createElement("img");
+	img.src= teletubbies[Math.floor(Math.random() * teletubbies.length)];
+
+	if(img.src.includes("rosa.png")){
+		event.mediaElement.classList.add("rosa");
+	} else if (img.src.includes("blu.png")){
+		event.mediaElement.classList.add("blue");
+	} else if (img.src.includes("verde.png")){
+		event.mediaElement.classList.add("green");
+	} else {
+		event.mediaElement.classList.add("yellow");
+	}
+
+	img.classList.add("teletubby");
+	let videoelement = document.createElement("div");
+	videoelement.classList.add("videoelement");
+	videoelement.appendChild( event.mediaElement );
+	videoelement.appendChild(img);
+	container.appendChild(videoelement)
+    event.mediaElement.classList.add("video");
 };
-var predefinedRoomId = 'YOUR_Name';
+connection.onstreamended = function(event) {
+  var mediaElement = document.getElementById(event.streamid);
+  if (mediaElement) {
+	 console.log(mediaElement.parentNode);
+	mediaElement.parentNode.parentNode.removeChild(mediaElement.parentNode);
+  }
+};
+
+
 
 document.getElementById('btn-open-room').onclick = function() {
-    this.disabled = true;
-    connection.open( predefinedRoomId );
+    // this.disabled = true;
+	var predefinedRoomId = document.getElementById('room-id').value;
+	instructions.style.display = 'none';
+	blocker.style.display = 'none';
+    connection.open( predefinedRoomId, function(
+	  isRoomOpened,
+	  roomid,
+	  error
+	) {
+		if (error === "Room not available") {
+		  let otherRoomId = prompt(
+			"it looks like this room already exist - click okay to join the room where your virtual stoners already are", roomid
+		  );
+		  connection.join( otherRoomId, function(
+	  	  isRoomOpened,
+	  	  roomid,
+	  	  error
+	  	) {
+
+	  		  return;
+
+
+	  	  }
+	  	);
+		  return;
+		}
+
+	  }
+	);
+};
+document.getElementById('btn-join-room').onclick = function() {
+
+	var predefinedRoomId = document.getElementById('room-id').value;
+    // this.disabled = true;
+	instructions.style.display = 'none';
+	blocker.style.display = 'none';
+    connection.join( predefinedRoomId, function(
+	  isRoomOpened,
+	  roomid,
+	  error
+	) {
+		if (error === "Room not available") {
+		  let otherRoomId = prompt(
+			"it looks like this room doesnt exist yet and u r alone - click okay to open a new room for your friends", roomid
+		  );
+		  connection.open( otherRoomId, function(
+	  	  isRoomOpened,
+	  	  roomid,
+	  	  error
+	  	) {
+
+	  		  return;
+
+
+	  	  }
+	  	);
+		  return;
+		}
+
+	  }
+	);
 };
 
-document.getElementById('btn-join-room').onclick = function() {
-    this.disabled = true;
-    connection.join( predefinedRoomId );
-};
+
+document.getElementById("coverpic").addEventListener( 'click', function () {
+    document.getElementById("coverpic").style.display = 'none';
+	inputform.style.display ="inline-block";
+
+});
+let chatbox = document.getElementById("chat");
+
+document.getElementById("chattoggle").onclick = function(){
+	console.log("chat");
+	if(chatbox.classList.contains("invisible")){
+		chatbox.classList.add("visible");
+		chatbox.classList.remove("invisible");
+	} else{
+		chatbox.classList.remove("visible");
+		chatbox.classList.add("invisible");
+	}
+
+}
+
 
 
 
@@ -93,256 +545,41 @@ $(function () {
       $('#messages').append($('<li>').text(msg));
     });
     socket.on("livestream", function(stream){
-        console.log("stream recieved frontend", stream);
-        // var video2 = document.getElementById("video2");
-        // video2.srcObject = stream;
+        console.log("stream recieved frontend");
+        var video2 = document.getElementById("video2");
+        video2.srcObject = stream;
 
     })
-    var video = document.getElementsByClassName("video1");
-    let webcam = true;
-    // Get access to the camera!
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      // Not adding `{ audio: true }` since we only want video now
-      navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
-        //video.src = window.URL.createObjectURL(stream);
-        for (var i = 0; i < video.length; i++) {
-          video[i].srcObject = stream;
-          video[i].play();
-          socket.emit('livestream', stream);
-        }
-      });
-    } else {
-      video[i].src = "https://www.youtube.com/watch?v=f7weYZUUv90";
-    }
   });
 
+	ticker("ticker");
+	ticker("ticker2");
+
+	function ticker(element) {
+		console.log("ticker cllaed");
+
+	  var ticker = document.getElementById(element);
+	  var headlines = ticker.querySelector(".credits");
+	  var links = headlines.getElementsByTagName("a");
+	  var left = headlines.offsetLeft;
+	  var animId;
+
+	  moveHeadLines();
+
+	  function moveHeadLines() {
+		left--;
+		if (left <= -links[0].offsetWidth) {
+		  left += links[0].offsetWidth;
+		  headlines.appendChild(links[0]);
+		}
+		headlines.style.left = left + "px";
+		animId = requestAnimationFrame(moveHeadLines);
+	  }
+	}
 
 
 
-// import * as THREE from '/three/build/three.module.js';
-// import { PointerLockControls } from '/three/examples/jsm/controls/PointerLockControls.js';
-//
-//
-// 		var camera, scene, renderer, controls, group;
-//
-// 		var objects = [];
-// 		let movingtext = [];
-//
-// 		var raycaster;
-//
-// 		var moveForward = false;
-// 		var moveBackward = false;
-// 		var moveLeft = false;
-// 		var moveRight = false;
-// 		var canJump = false;
-//
-// 		var prevTime = performance.now();
-// 		var velocity = new THREE.Vector3();
-// 		var direction = new THREE.Vector3();
-// 		var vertex = new THREE.Vector3();
-// 		var color = new THREE.Color();
-//
-//         let boxes=[];
-// 		init();
-// 		animate();
-//
-//         function init() {
-//           //set up textureloader for url texture placement
-//           const textureLoader = new THREE.TextureLoader();
-//           textureLoader.crossOrigin = "Anonymous";
-//           camera = new THREE.PerspectiveCamera(
-//               75,
-//               window.innerWidth / window.innerHeight,
-//               1,
-//               1000
-//           );
-//           camera.position.y = 40;
-//           scene = new THREE.Scene();
-//           scene.fog = new THREE.Fog("black", 400, 1000);
-//           var light = new THREE.HemisphereLight(0xeeeeff, 0x777788, 0.75);
-//           light.position.set(0.5, 1, 0.75);
-//           scene.add(light);
-//           controls = new PointerLockControls(camera, document.body);
-//
-//
-//           var blocker = document.getElementById( 'blocker' );
-//           var instructions = document.getElementById( 'instructions' );
-//
-//           instructions.addEventListener( 'click', function () {
-//               controls.lock();
-//           }, false );
-//
-//           controls.addEventListener( 'lock', function () {
-//
-//               instructions.style.display = 'none';
-//               blocker.style.display = 'none';
-//
-//           } );
-//
-//           controls.addEventListener( 'unlock', function () {
-//
-//               blocker.style.display = 'block';
-//               instructions.style.display = '';
-//
-//           } );
-//           scene.add(controls.getObject());
-//
-//           var onKeyDown = function ( event ) {
-//
-//               switch ( event.keyCode ) {
-//
-//                   case 38: // up
-//                   case 87: // w
-//                       moveForward = true;
-//                       break;
-//
-//                   case 37: // left
-//                   case 65: // a
-//                       moveLeft = true;
-//                       break;
-//
-//                   case 40: // down
-//                   case 83: // s
-//                       moveBackward = true;
-//                       break;
-//
-//                   case 39: // right
-//                   case 68: // d
-//                       moveRight = true;
-//                       break;
-//
-//                   case 32: // space
-//                       if ( canJump === true ) velocity.y += 350;
-//                       canJump = false;
-//                       break;
-//
-//               }
-//
-//           };
-//
-//           var onKeyUp = function ( event ) {
-//
-//               switch ( event.keyCode ) {
-//
-//                   case 38: // up
-//                   case 87: // w
-//                       moveForward = false;
-//                       break;
-//
-//                   case 37: // left
-//                   case 65: // a
-//                       moveLeft = false;
-//                       break;
-//
-//                   case 40: // down
-//                   case 83: // s
-//                       moveBackward = false;
-//                       break;
-//
-//                   case 39: // right
-//                   case 68: // d
-//                       moveRight = false;
-//                       break;
-//
-//               }
-//
-//           };
-//
-//           document.addEventListener( 'keydown', onKeyDown, false );
-//           document.addEventListener( 'keyup', onKeyUp, false );
-//
-//           var video = document.getElementById("localVideo");
-//           let texture = new THREE.VideoTexture(video);
-//           texture.minFilter = THREE.NearestFilter;
-//           texture.magFilter = THREE.LinearFilter;
-//           texture.format = THREE.RGBFormat;
-//           function createfloor() {
-//               let ground = new THREE.PlaneGeometry(500, 500, 100, 100);
-//               ground.rotateX(-Math.PI / 2);
-//               var material = new THREE.MeshBasicMaterial({
-//                   map: texture,
-//                   premultiplyAlpha: true
-//
-//               });
-//               let floor = new THREE.Mesh(ground, material);
-//               scene.add(floor);
-//           }
-//           createfloor();
-//
-//           // objects
-//           let boxMaterial = new THREE.MeshBasicMaterial({ map: texture });
-//           var boxGeometry = new THREE.OctahedronBufferGeometry( 100, 1 );
-//           // for (let i = 0; i < this.props.images.length; i++) {
-//           for (let i = 0; i < 10; i++) {
-//             var box = new THREE.Mesh(boxGeometry, boxMaterial);
-//             box.position.x = Math.floor(Math.random() * 20 - 10) * 60;
-//             box.position.y = Math.floor(Math.random() * 500) * 4;
-//             box.position.z = Math.floor(Math.random() * 20 - 10) * 60;
-//             boxes.push(box);
-//             scene.add(box);
-//           }
-//           renderer = new THREE.WebGLRenderer({
-//               antialias: true,
-//               alpha: true
-//           });
-//           renderer.setPixelRatio(window.devicePixelRatio);
-//           renderer.setSize(window.innerWidth, window.innerHeight);
-//           document.body.appendChild(renderer.domElement);
-//
-//           //
-//           window.addEventListener("resize", onWindowResize, false);
-//         }
-//
-//         function onWindowResize() {
-//           camera.aspect = window.innerWidth / window.innerHeight;
-//           camera.updateProjectionMatrix();
-//           renderer.setSize(window.innerWidth, window.innerHeight);
-//         }
-//
-//         function animate() {
-//           let canvases = document.getElementsByTagName("canvas");
-//           requestAnimationFrame(animate);
-//           // raycaster.ray.origin.copy(controls.getObject().position);
-//           // raycaster.ray.origin.y -= 10;
-//           // var intersections = raycaster.intersectObjects(objects);
-//           function createControls() {
-//               var time = performance.now();
-//               var delta = (time - prevTime) / 1000;
-//               velocity.x -= velocity.x * 10.0 * delta;
-//               velocity.z -= velocity.z * 10.0 * delta;
-//               velocity.y -= 9.8 * 100.0 * delta; // 100.0 = mass
-//               direction.z = Number(moveForward) - Number(moveBackward);
-//               direction.x = Number(moveRight) - Number(moveLeft);
-//               direction.normalize(); // this ensures consistent movements in all directions
-//               if (moveForward || moveBackward)
-//                   velocity.z -= direction.z * 400.0 * delta;
-//               if (moveLeft || moveRight)
-//                   velocity.x -= direction.x * 400.0 * delta;
-//
-//               controls.moveRight(-velocity.x * delta);
-//               controls.moveForward(-velocity.z * delta);
-//               controls.getObject().position.y += velocity.y * delta; // new behavior
-//               if (controls.getObject().position.y < 10) {
-//                   velocity.y = 0;
-//                   controls.getObject().position.y = 10;
-//                   canJump = true;
-//               }
-//               prevTime = time;
-//           }
-//           createControls();
-//
-//           for (var i = 0; i < boxes.length; i++) {
-//               // boxes[i].rotation.y += 0.005;
-// 			  boxes[i].rotation.y += 0.002;
-//   			boxes[i].rotation.x += 0.002;
-// 			  boxes[i].position.y += 0.002;
-// 			  // if(boxes[i].position.y>=1000){
-// 				//   boxes[i].position.y = -100;
-// 			  // }
-//
-//           }
-//           renderer.render(scene, camera);
-//         }
+
 
 		</script>
 	</body>

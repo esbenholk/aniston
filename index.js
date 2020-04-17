@@ -53,9 +53,9 @@ app.get("/emojicon", (req, res) => {
     layout: "secondary"
   });
 });
-app.get("/webcam-landscape", (req, res) => {
+app.get("/clusterduckssuperinsane42020party", (req, res) => {
   res.render("livestream", {
-    layout: "main"
+    layout: "third"
   });
 });
 
