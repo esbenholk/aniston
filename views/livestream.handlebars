@@ -4,310 +4,9 @@
 		<title>HOUSE OF KILLING</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link type="text/css" rel="stylesheet" href="livestreamstyle.css">
+
 		<style>
-            body{
-                background-color: black;
-				height: 100vh;
-				width: 100%;
-				display: flex;
-				flex-direction: column;
-				justify-content: flex-start;
-            }
-
-			/* //intro blocker */
-            #blocker {
-              position: fixed;
-              left: 0;
-              top: 0;
-              width: 100%;
-              height: 100%;
-              background-color: rgba(0,0,0,1);
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-			  z-index: 2;
-            }
-            #instructions {
-              width: 70%;
-              height: 50%;
-              position: fixed;
-              left: 50%;
-              top: 20%;
-              transform: translateX(-50%);
-              color: #ffffff;
-              text-align: center;
-              font-family: Arial;
-              font-size: 1vw;
-              line-height: auto;
-              cursor: pointer;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-            }
-			#coverpic{
-				height: 120%;
-				animation: minimove 4s infinite;
-			}
-            #inputform{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-				display: none;
-				position: fixed;
-				top: 10%;
-				left: 50%;
-				transform: translateX(-50%);
-            }
-            button{
-                background: blue;
-                border-radius: 10px;
-                width: 100px;
-                font-size: 20px;
-                font-weight: 1;
-                color: white;
-                border: none;
-            }
-			h1{
-				color: white;
-			}
-			#four42020{
-
-			}
-			.page{
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				width: 100%;
-				display: flex;
-				flex-direction: column;
-				/* justify-content: space-between;
-				align-items: flex-start;
-				margin: 5%; */
-			}
-			#logoes{
-				display: flex;
-				width: 100%;
-				flex-direction: row;
-				justify-content: space-between;
-				white-space: nowrap;
-				margin-top: 5%;
-				margin-left: 5%;
-				margin-right: 5%;
-				z-index: 1;
-
-			}
-			#cluster-felt{
-				display: flex;
-				white-space: nowrap;
-				width: 50%;
-				justify-content: flex-end;
-				align-items: flex-start;
-
-			}
-			#feltzine{
-				height: 15vh;
-			}
-
-			.logo{
-				height: 25vh;
-				display: inline-block;
-
-			}
-			/* //chat */
-			#chatcontainer{
-				display: flex;
-				justify-content: flex-end;
-				align-items: flex-end;
-				position: fixed;
-				bottom: 0;
-				right: 0;
-				margin: 5px;
-				z-index: 1;
-			}
-			#chat{
-                /* position: fixed;
-                bottom: 0;
-                right: 0;
-				margin: 5px; */
-            }
-			#chatform{
-				max-width: 200px;
-				background-color: yellow;
-				display: flex;
-				white-space: nowrap;
-			}
-			#chattoggle{
-				/* height: 20px; */
-
-			}
-			#messages{
-				list-style: none;
-				color: yellow;
-				font-size: 15px;
-			}
-			li{
-				text-align: right;
-			}
-			/* ////joint and teletubbis */
-			.sunpart{
-				position: absolute;
-				width: 100%;
-				height: 100%;
-				bottom: 0;
-				left: 0;
-				min-width: 100px;
-
-			}
-
-			#joint{
-				display: inline-block;
-				postion: absolute;
-				bottom: 0;
-				left: 0;
-				display: flex;
-				white-space: nowrap;
-				animation: move 4s infinite;
-			}
-			@media only screen and (max-width: 600px) {
-				main{
-					height: 100vh;
-				}
-				#joint{
-				  display: inline-block;
-				  postion: absolute;
-				  left: 0;
-				  display: flex;
-				  white-space: nowrap;
-				  animation: move 4s infinite;
-			  }
-			}
-			#container{
-				display: flex;
-				flex-direction: row;
-				justify-content: flex-end;
-				white-space: nowrap;
-				display: inline-block;
-			}
-			.jointparts{
-				display: inline-block;
-				height: 50vh;
-				position: relative;
-			}
-			.videoelement{
-				position: relative;
-				display: inline-block;
-				width: 150px;
-				height: 100%;
-				/* bottom: 180px; */
-			}
-			.teletubby{
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				top: 0;
-				left: 0;
-			}
-			.yellow{
-				width: 50%;
-				margin: 25%;
-				position: absolute;
-				top: 25%;
-				left: 0;
-				}
-			.blue{
-				width: 50%;
-				margin: 30%;
-				margin-left: 40%;
-				position: absolute;
-				top: 20%;
-				left: 0;
-			}
-			.green{
-				width: 40%;
-				margin: 30%;
-				margin-left: 30%;
-				position: absolute;
-				top: 20%;
-				left: 0;
-				}
-			.rosa{
-
-					width: 50%;
-					margin-left: 25%;
-					position: absolute;
-					top: 30%;
-					left: 0;
-
-			}
-
-			/* ////ticker credits */
-			.credits {
-	          white-space: nowrap;
-	          position: absolute;
-			  height: 100%;
-	          z-index: 8;
-	          font-family: "";
-			  width: 100%;
-	        }
-	        a {
-	          text-decoration: none;
-	          color: white;
-			  font-size: 10px;
-			  margin: 0;
-			  padding: 0;
-	        }
-			#tickercontainer {
-	          height: 20px;
-			  overflow: hidden;
-			  bottom: 0;
-			  position: fixed;
-			  left: 0;
-			  right: 0;
-			  width: 100%;
-
-	        }
-			#ticker{
-	          position: relative;
-	          height: 10px;
-	        }
-
-			/* ////animation */
-			@keyframes move {
-			  0% {
-			    margin-top: 0%;
-			  }
-			  50% {
-			    margin-top: -2%;
-			  }
-			  100% {
-			    margin-top: 0%;
-			  }
-			}
-			@keyframes minimove {
-			  0% {
-			    margin-top: 0;
-			  }
-			  50% {
-			    margin-top: 5%;
-			  }
-			  100% {
-			    margin-top: 0;
-			  }
-			}
-			/* ////invisibility togggles */
-			.visible{
-				visibility: visible;
-				display: inline-block;
-			}
-			.invisible{
-				visibility: hidden;
-				display: none;
-			}
-
 
 		</style>
 
@@ -322,9 +21,9 @@
 				</div>
 			</div>
 			<div id="joint">
-				<div class="jointparts">
-			     <img id="jointfront" class="jointparts sunpart" src="teletubby/top.png" alt="hiiiiiigh" />
-				 <img id="sun" class="jointparts sunpart" src="teletubby/sun.png" alt="hiiiiiigh" />
+				<div class="jointparts suncontainer" >
+			     <img class="jointfront jointparts sunpart" src="teletubby/top.png" alt="hiiiiiigh" />
+				 <!-- <img id="sun" class=" jointfront jointparts sunpart" src="teletubby/sun.png" alt="hiiiiiigh" /> -->
 				 </div>
 		        <div id="container" class="jointparts"></div>
 		        <img id="jointback" class="jointparts" src="teletubby/bottom.png" alt="hi" />
@@ -416,26 +115,43 @@ let teletubbies = ["teletubby/rosa.png", "teletubby/blu.png", "teletubby/verde.p
 connection.onstream = function(event) {
     let container =document.getElementById('container');
 	let img = document.createElement("img");
-	img.src= teletubbies[Math.floor(Math.random() * teletubbies.length)];
+
+
+	img.src = teletubbies[Math.floor(Math.random() * teletubbies.length)];
 
 	if(img.src.includes("rosa.png")){
 		event.mediaElement.classList.add("rosa");
+		// mutebutton.style.backgroundColor = "red";
 	} else if (img.src.includes("blu.png")){
 		event.mediaElement.classList.add("blue");
+		// mutebutton.style.backgroundColor = "blue"
 	} else if (img.src.includes("verde.png")){
 		event.mediaElement.classList.add("green");
+		// mutebutton.style.backgroundColor = "green"
 	} else {
 		event.mediaElement.classList.add("yellow");
+		// mutebutton.style.backgroundColor = "yellow"
 	}
+	event.mediaElement.classList.add("video");
 
 	img.classList.add("teletubby");
+
 	let videoelement = document.createElement("div");
 	videoelement.classList.add("videoelement");
 	videoelement.appendChild( event.mediaElement );
+
 	videoelement.appendChild(img);
 	container.appendChild(videoelement)
-    event.mediaElement.classList.add("video");
+
+
+
 };
+
+
+
+
+
+
 connection.onstreamended = function(event) {
   var mediaElement = document.getElementById(event.streamid);
   if (mediaElement) {
@@ -516,10 +232,30 @@ document.getElementById("coverpic").addEventListener( 'click', function () {
 	inputform.style.display ="inline-block";
 
 });
+document.getElementById("joint").addEventListener('click', function (target) {
+	if(target.srcElement.children[0]){
+		if(target.srcElement.children[0].children[0].id.length>2){
+			let currentStream = document.getElementById(target.srcElement.children[0].children[0].id)
+			if(currentStream.muted === false){
+				currentStream.muted =true;
+				currentStream.volume = 0;
+
+			} else{
+				currentStream.muted = false;
+				currentStream.volume = 1;
+
+			}
+		}
+	}
+
+
+
+
+});
 let chatbox = document.getElementById("chat");
 
 document.getElementById("chattoggle").onclick = function(){
-	console.log("chat");
+
 	if(chatbox.classList.contains("invisible")){
 		chatbox.classList.add("visible");
 		chatbox.classList.remove("invisible");
@@ -553,10 +289,10 @@ $(function () {
   });
 
 	ticker("ticker");
-	ticker("ticker2");
+
 
 	function ticker(element) {
-		console.log("ticker cllaed");
+
 
 	  var ticker = document.getElementById(element);
 	  var headlines = ticker.querySelector(".credits");
@@ -576,6 +312,10 @@ $(function () {
 		animId = requestAnimationFrame(moveHeadLines);
 	  }
 	}
+
+
+
+
 
 
 

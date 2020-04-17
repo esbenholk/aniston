@@ -1,0 +1,313 @@
+body {
+  background-color: black;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* //intro blocker */
+#blocker {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+#instructions {
+  width: 70%;
+  height: 50%;
+  position: fixed;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  text-align: center;
+  font-family: Arial;
+  font-size: 1vw;
+  line-height: auto;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#coverpic {
+  height: 120%;
+  animation: minimove 4s infinite;
+}
+#inputform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+button {
+  background: blue;
+  border-radius: 10px;
+  width: 100px;
+  font-size: 20px;
+  font-weight: 1;
+  color: white;
+  border: none;
+}
+h1 {
+  color: white;
+}
+#four42020 {
+}
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between;
+    align-items: flex-start;
+    margin: 5%; */
+}
+#logoes {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  white-space: nowrap;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  z-index: 1;
+}
+#cluster-felt {
+  display: flex;
+  white-space: nowrap;
+  width: 50%;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+#feltzine {
+  height: 15vh;
+}
+
+.logo {
+  height: 25vh;
+  display: inline-block;
+}
+/* //chat */
+#chatcontainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 5px;
+  z-index: 1;
+}
+#chat {
+  /* position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 5px; */
+}
+#chatform {
+  max-width: 200px;
+  background-color: yellow;
+  display: flex;
+  white-space: nowrap;
+}
+#chattoggle {
+  /* height: 20px; */
+}
+#messages {
+  list-style: none;
+  color: yellow;
+  font-size: 15px;
+}
+li {
+  text-align: right;
+}
+/* ////joint and teletubbis */
+.sunpart {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-width: 200px;
+}
+
+#joint {
+  display: inline-block;
+  postion: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  white-space: nowrap;
+  animation: move 4s infinite;
+}
+@media only screen and (max-width: 600px) {
+  main {
+    height: 100vh;
+  }
+  #joint {
+    display: inline-block;
+    postion: absolute;
+    left: 0;
+    display: flex;
+    white-space: nowrap;
+    animation: move 4s infinite;
+  }
+}
+#container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  white-space: nowrap;
+  display: inline-block;
+}
+.suncontainer {
+  position: relative;
+}
+.jointparts {
+  display: inline-block;
+  height: 50vh;
+  position: relative;
+}
+.videoelement {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 100%;
+  z-index: -999;
+}
+.teletubby {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -9;
+  cursor: pointer;
+}
+.yellow {
+  width: 50%;
+  margin: 25%;
+  position: absolute;
+  top: 25%;
+  left: 0;
+}
+.blue {
+  width: 50%;
+  margin: 30%;
+  margin-left: 40%;
+  position: absolute;
+  top: 20%;
+  left: 0;
+}
+.green {
+  width: 40%;
+  margin: 30%;
+  margin-left: 30%;
+  position: absolute;
+  top: 20%;
+  left: 0;
+}
+.rosa {
+  width: 50%;
+  margin-left: 25%;
+  position: absolute;
+  top: 30%;
+  left: 0;
+}
+.video {
+  z-index: -9999;
+  cursor: pointer;
+}
+
+.mutebutton {
+  width: 40px;
+  height: 40px;
+  border-radius: 10%;
+  z-index: 9999999999;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+}
+
+/* ////ticker credits */
+.credits {
+  white-space: nowrap;
+  position: absolute;
+  height: 100%;
+  z-index: 8;
+  font-family: "";
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+}
+#tickercontainer {
+  height: 20px;
+  overflow: hidden;
+  bottom: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+#ticker {
+  position: relative;
+  height: 10px;
+}
+
+/* ////animation */
+@keyframes move {
+  0% {
+    margin-top: 0%;
+  }
+  50% {
+    margin-top: -2%;
+  }
+  100% {
+    margin-top: 0%;
+  }
+}
+@keyframes minimove {
+  0% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: 5%;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+/* ////invisibility togggles */
+.visible {
+  visibility: visible;
+  display: inline-block;
+}
+.invisible {
+  visibility: hidden;
+  display: none;
+}
