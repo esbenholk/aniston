@@ -58,5 +58,10 @@ app.get("/passthevirtualjoint", (req, res) => {
     layout: "third"
   });
 });
+app.get("/webcamlandscape", (req, res) => {
+  res.render("webcamlandscape", {
+    layout: "third"
+  });
+});
 
 http.listen(process.env.PORT || 8080, () => console.log("awake"));
