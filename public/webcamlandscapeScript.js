@@ -206,12 +206,12 @@ function init(streamArray) {
 
   function createShape(texture) {
     let boxMaterial = new THREE.MeshBasicMaterial({ map: texture });
-    var boxGeometry = new THREE.OctahedronBufferGeometry(100, 1);
+    var boxGeometry = new THREE.OctahedronBufferGeometry(100, 5);
     for (let i = 0; i < 3; i++) {
       var box = new THREE.Mesh(boxGeometry, boxMaterial);
-      box.position.x = Math.floor(Math.random() * 20 - 10) * 60;
-      box.position.y = Math.floor(Math.random() * 500) * 4;
-      box.position.z = Math.floor(Math.random() * 20 - 10) * 60;
+      box.position.x = Math.floor(Math.random() * 20 - 10) * 50;
+      box.position.y = Math.floor(Math.random() * 20) * 10;
+      box.position.z = Math.floor(Math.random() * 20 - 10) * 50;
       boxes.push(box);
       scene.add(box);
     }
