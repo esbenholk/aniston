@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "amatic";
+  src: url("teletubby/AmaticSC-Regular.ttf"); /* IE9 Compat Modes */
+  src: url("teletubby/AmaticSC-Regular.ttf") format("truetype"),
+    /* IE6-IE8 */ url("teletubby/AmaticSC-Regular.ttf") format("woff2"),
+    /* Super Modern Browsers */ url("webfont.woff") format("woff"),
+    /* Pretty Modern Browsers */ url("webfont.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("webfont.svg#svgFontName") format("svg"); /* Legacy iOS */
+}
+
 body {
   background-color: black;
   height: 100vh;
@@ -39,6 +49,10 @@ body {
   align-items: center;
   justify-content: center;
 }
+#particles-js {
+  width: 100vw;
+  height: 100vh;
+}
 #coverpic {
   height: 120%;
   animation: minimove 4s infinite;
@@ -67,6 +81,7 @@ h1 {
   color: white;
 }
 #four42020 {
+  height: 23vh;
 }
 .page {
   position: absolute;
@@ -97,6 +112,7 @@ h1 {
   width: 50%;
   justify-content: flex-end;
   align-items: flex-start;
+  margin-right: 10%;
 }
 #feltzine {
   height: 15vh;
@@ -126,7 +142,7 @@ h1 {
 }
 #chatform {
   max-width: 200px;
-  background-color: yellow;
+
   display: flex;
   white-space: nowrap;
 }
@@ -135,7 +151,7 @@ h1 {
 }
 #messages {
   list-style: none;
-  color: yellow;
+  color: #11cecf;
   font-size: 15px;
 }
 li {
@@ -227,26 +243,24 @@ li {
   cursor: pointer;
 }
 .yellow {
-  width: 50%;
+  width: 60%;
   margin: 25%;
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 0;
 }
 .blue {
   width: 50%;
-  margin: 30%;
-  margin-left: 40%;
   position: absolute;
-  top: 20%;
-  left: 0;
+  top: 33%;
+  margin-left: 40%;
 }
 .green {
-  width: 40%;
-  margin: 30%;
+  width: 50%;
+  margin-left: 25%;
   margin-left: 30%;
   position: absolute;
-  top: 20%;
+  top: 30%;
   left: 0;
 }
 .rosa {
@@ -286,9 +300,13 @@ a {
   font-size: 10px;
   margin: 0;
   padding: 0;
+  font-family: "amatic", Fallback, sans-serif;
+}
+.black {
+  color: black;
 }
 #tickercontainer {
-  height: 20px;
+  height: 30px;
   overflow: hidden;
   bottom: 0;
   position: fixed;
@@ -298,7 +316,12 @@ a {
 }
 #ticker {
   position: relative;
-  height: 10px;
+  height: 30px;
+}
+a {
+  font-size: 20px;
+
+  margin-bottom: 10%;
 }
 
 /* ////animation */

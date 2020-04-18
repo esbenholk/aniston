@@ -16,8 +16,12 @@
 			<div id="logoes">
 				<img class="logo" id="four42020" src="teletubby/42020.png"/>
 				<div id="cluster-felt">
+					<a href="http://clusterduck.space/">
 				<img class="logo" id="clusterducklogo" src="teletubby/ClusterduckLogo.png"/>
-				<img class="logo" id="feltzine" src="teletubby/feltzine.png"/>
+				</a>
+				<a href="https://news.feltzine.us/">
+					<img class="logo" id="feltzine" src="teletubby/feltzine.png"/>
+				</a>
 				</div>
 			</div>
 			<div id="joint">
@@ -42,22 +46,36 @@
 		<div id="tickercontainer">
 	        <div id="ticker" class="ticker">
 		        <div class="credits">
-		            <a> credits credtis credits credits </a>
-					<a> credits credtis credits credits </a>
-					<a> credits credtis credits credits </a>
-					<a> credits credtis credits credits </a>
-					<a> credits credtis credits credits </a>
-					<a> credits credtis credits credits </a>
-					<a> credits credtis credits credits </a>
-					<a> credits credtis credits credits </a>
-					<a> credits credtis credits credits </a>
-					<a> credits credtis credits credits </a>
-					<a> credits credtis credits credits </a>
-					<a> credits credtis credits credits </a>
-					<a> credits credtis credits credits </a>
-					<a> credits credtis credits credits </a>
-					<a> credits credtis credits credits </a>
 
+					 <!-- <a class="black" href="https://www.youtube.com/watch?v=cOJaDDO38kk&feature=emb_title">Joint Directon<strong> Tomato Cappelletti</strong></a>
+					<a class="black" href="https://stayvirtual.herokuapp.com/"> Creative Coding <strong>Esben Holk </strong></a>
+					<a  class="black"href="http://clusterduck.space/"> Pixel Bullshit  <strong>Franziska Von Guten</strong> </a>
+					<a class="black" href="http://clusterduck.space/"> Lazy Lettering <strong>Lazy Doggy </strong>  </a>
+					<a class="black" href="https://www.youtube.com/watch?v=cOJaDDO38kk&feature=emb_title">Joint Directon<strong> Tomato Cappelletti</strong></a>
+					<a class="black" href="https://stayvirtual.herokuapp.com/"> Creative Coding <strong>Esben Holk </strong></a>
+					<a  class="black"href="http://clusterduck.space/"> Pixel Bullshit  <strong>Franziska Von Guten</strong> </a>
+					<a class="black" href="http://clusterduck.space/"> Lazy Lettering <strong>Lazy Doggy </strong>  </a>--> --> -->
+
+					<a class="black" > Tubbies Design <strong>Björn Heerßen</strong> </a>
+
+					<a class="black" >Joint Directon<strong> Tomato Cappelletti</strong></a>
+					<a class="black" > Creative Coding <strong>Esben Holk </strong></a>
+					<a  class="black"> Pixel Bullshit  <strong>Franziska Von Guten</strong> </a>
+					<a class="black" > Lazy Lettering <strong>Lazy Doggy </strong>  </a>
+					<a href="https://www.youtube.com/watch?v=cOJaDDO38kk&feature=emb_title">Joint Directon<strong> Tomato Cappelletti</strong></a>
+					<a href="https://stayvirtual.herokuapp.com/"> Creative Coding <strong>Esben Holk </strong></a>
+					<a href="http://clusterduck.space/"> Pixel Bullshit  <strong>Franziska Von Guten</strong> </a>
+					<a href="http://clusterduck.space/"> Lazy Lettering <strong>Lazy Doggy </strong>  </a>
+					<a href="http://clusterduck.space/"> Tubbies Design <strong>Björn Heerßen</strong> </a>
+
+					<a class="black" >Joint Directon<strong> Tomato Cappelletti</strong></a>
+					<a class="black" > Creative Coding <strong>Esben Holk </strong></a>
+					<a  class="black"> Pixel Bullshit  <strong>Franziska Von Guten</strong> </a>
+					<a class="black" > Lazy Lettering <strong>Lazy Doggy </strong>  </a>
+
+					<a class="black"> Tubbies Design <strong>Björn Heerßen</strong> </a>
+
+					<a class="black"> Tubbies Design <strong>Björn Heerßen</strong> </a>
 		        </div>
 		     </div>
 
@@ -84,6 +102,7 @@
 		        </div>
 				<img id="coverpic" src="Join-the-Joint.png"/>
 			</div>
+			<div id="particles-js" ></div>
 		</div>
 
 
@@ -93,6 +112,8 @@
 <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
 <script src="https://rtcmulticonnection.herokuapp.com/dist/RTCMultiConnection.min.js"></script>
 <script src="https://rtcmulticonnection.herokuapp.com/socket.io/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
 <script type="module">
 var blocker = document.getElementById( 'blocker' );
 var instructions = document.getElementById( 'instructions' );
@@ -307,6 +328,133 @@ $(function () {
 		animId = requestAnimationFrame(moveHeadLines);
 	  }
 	}
+	var image = "/teletubby/png/weedleaf03.png";
+    let images = ["/teletubby/png/weedleaf02.png", "/teletubby/png/butt.png", "/teletubby/png/cappi.png",
+"/teletubby/png/clusterlogo.png", "/teletubby/png/dick.png", "/teletubby/png/dolphin.png","/teletubby/png/duck.png", "/teletubby/png/joint.png", "/teletubby/png/smiley.png",
+"/teletubby/png/tomato.png", "/teletubby/png/weedleaf.png"];
+
+    changeImage();
+
+    function changeImage() {
+		image = images[Math.floor(Math.random() * images.length)];
+        const particlesJSON = {
+          particles: {
+            number: {
+              value: 80,
+              density: {
+                enable: false,
+                value_area: 8049.305944649181
+              }
+            },
+            color: {
+              value: "#4aff9f"
+            },
+            shape: {
+              type: "image",
+              stroke: {
+                width: 0.7,
+                color: "rgba(26, 102, 255, 0.2)"
+              },
+              polygon: {
+                nb_sides: 9
+              },
+              image: {
+                src: image,
+                width: 130,
+                height: 130
+              }
+            },
+            opacity: {
+              value: 0.1,
+              random: false,
+              anim: {
+                enable: false,
+                speed: 1,
+                opacity_min: 0.1,
+                sync: false
+              }
+            },
+            size: {
+              value: 20,
+              random: true,
+              anim: {
+                enable: false,
+                speed: 40,
+                size_min: 0.1,
+                sync: false
+              }
+            },
+            line_linked: {
+              enable: false,
+              distance: 100,
+              color: "6200ff",
+              opacity: 10,
+              width: 0
+            },
+            move: {
+              enable: true,
+              speed: 5,
+              direction: "none",
+              random: false,
+              straight: false,
+              out_mode: "out",
+              bounce: false,
+              attract: {
+                enable: true,
+                rotateX: 1362.9002517356944,
+                rotateY: 8818.766334760376
+              }
+            }
+          },
+          interactivity: {
+            detect_on: "canvas",
+            events: {
+              onhover: {
+                enable: false,
+                mode: "grab"
+              },
+              onclick: {
+                enable: true,
+                mode: "bubble"
+              },
+              resize: true
+            },
+            modes: {
+              grab: {
+                distance: 400,
+                line_linked: {
+                  opacity: 1
+                }
+              },
+              bubble: {
+                distance: 500,
+                size: 25,
+                duration: 4,
+                opacity: 0.5,
+                speed: 100
+              },
+              repulse: {
+                distance: 200,
+                duration: 0.4
+              },
+              push: {
+                particles_nb: 4
+              },
+              remove: {
+                particles_nb: 2
+              }
+            }
+          },
+          retina_detect: false
+        };
+        console.log("hej", document.getElementById("particles-js").style.opacity);
+
+        particlesJS("particles-js", particlesJSON);
+      setTimeout(function() {
+
+        changeImage();
+	}, 4000);
+    }
 
 
 
