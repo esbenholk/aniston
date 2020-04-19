@@ -32,11 +32,11 @@ io.on("connection", socket => {
   });
 });
 
-// app.get("/", (req, res) => {
-//   res.render("frontpage", {
-//     layout: "main"
-//   });
-// });
+app.get("/", (req, res) => {
+  res.render("frontpage", {
+    layout: "main"
+  });
+});
 //
 // app.get("/JenniferAnistonSuperfansDigitalTarotLandscape", (req, res) => {
 //   res.render("virtualexperience", {
