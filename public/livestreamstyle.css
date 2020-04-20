@@ -223,7 +223,11 @@ li {
     animation: move 4s infinite;
   }
   #logoes {
-    width: 100%;
+    width: 800px;
+  }
+  .video {
+    z-index: -9999999999;
+    cursor: pointer;
   }
   .logo {
     width: 50vw;
@@ -231,7 +235,7 @@ li {
     display: block;
   }
   #cluster-felt {
-    flex-direction: column;
+    flex-direction: row;
     position: relative;
     right: -150%;
     margin-top: 10%;
@@ -323,7 +327,7 @@ li {
   left: 0;
 }
 .video {
-  z-index: -9999;
+  z-index: -9999999999;
   cursor: pointer;
 }
 
