@@ -17,75 +17,47 @@
 				<img class="logo" id="four42020" src="teletubby/42020.png"/>
 				<div id="cluster-felt">
 					<a href="http://clusterduck.space/">
-				<img class="logo" id="clusterducklogo" src="teletubby/ClusterduckLogo.png"/>
-				</a>
-				<a href="https://news.feltzine.us/">
-					<img class="logo" id="feltzine" src="teletubby/feltzine.png"/>
-				</a>
+					<img class="logo" id="clusterducklogo" src="teletubby/ClusterduckLogo.png"/>
+					</a>
+					<div class="pankefelt">
+					<a href="https://news.feltzine.us/">
+						<img class="logo" id="feltzine" src="teletubby/feltzine.png"/>
+					</a>
+					<a href="https://www.panke.gallery/">
+						<img class="logo" id="panke" src="teletubby/panke.png"/>
+					</a>
+					</div>
 				</div>
 			</div>
 			<div id="joint">
 				<div class="jointparts suncontainer" >
 			     <img class="jointfront jointparts sunpart" src="teletubby/top.png" alt="hiiiiiigh" />
-				 <!-- <img id="sun" class=" jointfront jointparts sunpart" src="teletubby/sun.png" alt="hiiiiiigh" /> -->
 				 </div>
 		        <div id="container" class="jointparts"></div>
 		        <img id="jointback" class="jointparts" src="teletubby/bottom.png" alt="hi" />
 			</div>
 		</div>
 		<div id="chatcontainer">
-			<button id="chattoggle">CHAT</button>
+			<img src="teletubby/chatbutton.png" id="chattoggle"/>
 	        <div id="chat" class="invisible">
 	            	<ul id="messages"></ul>
 	                <form action="" id="chatform" >
-	                  <input id="m" autocomplete="off" /><button id="chatbutton">Send</button>
+	                  <input id="m" autocomplete="off" /><button id="chatbutton"><img class="chattoggle" src="teletubby/send-button.png"</button>
 	                </form>
 	        </div>
 		</div>
 
+
 		<div id="tickercontainer">
-	        <div id="ticker" class="ticker">
-		        <div class="credits">
+			<img id="tickerpng" class="credits-png" src="/teletubby/credits.png"/>
+		</div>
 
-					 <!-- <a class="black" href="https://www.youtube.com/watch?v=cOJaDDO38kk&feature=emb_title">Joint Directon<strong> Tomato Cappelletti</strong></a>
-					<a class="black" href="https://stayvirtual.herokuapp.com/"> Creative Coding <strong>Esben Holk </strong></a>
-					<a  class="black"href="http://clusterduck.space/"> Pixel Bullshit  <strong>Franziska Von Guten</strong> </a>
-					<a class="black" href="http://clusterduck.space/"> Lazy Lettering <strong>Lazy Doggy </strong>  </a>
-					<a class="black" href="https://www.youtube.com/watch?v=cOJaDDO38kk&feature=emb_title">Joint Directon<strong> Tomato Cappelletti</strong></a>
-					<a class="black" href="https://stayvirtual.herokuapp.com/"> Creative Coding <strong>Esben Holk </strong></a>
-					<a  class="black"href="http://clusterduck.space/"> Pixel Bullshit  <strong>Franziska Von Guten</strong> </a>
-					<a class="black" href="http://clusterduck.space/"> Lazy Lettering <strong>Lazy Doggy </strong>  </a>--> --> -->
-
-					<a class="black" > Tubbies Design <strong>Björn Heerßen</strong> </a>
-
-					<a class="black" >Joint Directon<strong> Tomato Cappelletti</strong></a>
-					<a class="black" > Creative Coding <strong>Esben Holk </strong></a>
-					<a  class="black"> Pixel Bullshit  <strong>Franziska Von Guten</strong> </a>
-					<a class="black" > Lazy Lettering <strong>Lazy Doggy </strong>  </a>
-					<a href="https://www.youtube.com/watch?v=cOJaDDO38kk&feature=emb_title">Joint Directon<strong> Tomato Cappelletti</strong></a>
-					<a href="https://stayvirtual.herokuapp.com/"> Creative Coding <strong>Esben Holk </strong></a>
-					<a href="http://clusterduck.space/"> Pixel Bullshit  <strong>Franziska Von Guten</strong> </a>
-					<a href="http://clusterduck.space/"> Lazy Lettering <strong>Lazy Doggy </strong>  </a>
-					<a href="http://clusterduck.space/"> Tubbies Design <strong>Björn Heerßen</strong> </a>
-
-					<a class="black" >Joint Directon<strong> Tomato Cappelletti</strong></a>
-					<a class="black" > Creative Coding <strong>Esben Holk </strong></a>
-					<a  class="black"> Pixel Bullshit  <strong>Franziska Von Guten</strong> </a>
-					<a class="black" > Lazy Lettering <strong>Lazy Doggy </strong>  </a>
-
-					<a class="black"> Tubbies Design <strong>Björn Heerßen</strong> </a>
-
-					<a class="black"> Tubbies Design <strong>Björn Heerßen</strong> </a>
-		        </div>
-		     </div>
-
-		 </div>
 
 		<div id="blocker">
 			<div id="instructions">
 				<div id="inputform">
 			        <h1 id="space">
-			          name your space
+			          <img id="name-your-space" src="/teletubby/name-your-space.png"/>
 			          <input
 			            type="text"
 			            id="room-id"
@@ -96,8 +68,8 @@
 			          />
 			        </h1>
 			        <div class="buttons">
-			        <button id="btn-open-room">Open Room</button>
-			        <button id="btn-join-room">Join Room</button>
+					<img class="button" src="teletubby/openroomfull.png" id="btn-open-room"/>
+					<img class="button" src="teletubby/joinroomfull.png" id="btn-join-room"/>
 			        </div>
 		        </div>
 				<img id="coverpic" src="Join-the-Joint.png"/>
@@ -209,6 +181,21 @@ document.getElementById('btn-open-room').onclick = function() {
 	  }
 	);
 };
+document.getElementById('btn-join-room').onmouseover = function(){
+this.setAttribute("src","/teletubby/joinroomempty.png");
+}
+document.getElementById('btn-open-room').onmouseover = function(){
+this.setAttribute("src","/teletubby/openroomempty.png");
+}
+document.getElementById('btn-join-room').onmouseleave = function(){
+this.setAttribute("src","/teletubby/joinroomfull.png");
+}
+document.getElementById('btn-open-room').onmouseleave = function(){
+this.setAttribute("src","/teletubby/openroomfull.png");
+}
+
+
+
 document.getElementById('btn-join-room').onclick = function() {
 
 	var predefinedRoomId = document.getElementById('room-id').value;
@@ -304,30 +291,8 @@ $(function () {
     })
   });
 
-	ticker("ticker");
 
 
-	function ticker(element) {
-
-
-	  var ticker = document.getElementById(element);
-	  var headlines = ticker.querySelector(".credits");
-	  var links = headlines.getElementsByTagName("a");
-	  var left = headlines.offsetLeft;
-	  var animId;
-
-	  moveHeadLines();
-
-	  function moveHeadLines() {
-		left--;
-		if (left <= -links[0].offsetWidth) {
-		  left += links[0].offsetWidth;
-		  headlines.appendChild(links[0]);
-		}
-		headlines.style.left = left + "px";
-		animId = requestAnimationFrame(moveHeadLines);
-	  }
-	}
 	var image = "/teletubby/png/weedleaf03.png";
     let images = ["/teletubby/png/weedleaf02.png", "/teletubby/png/butt.png", "/teletubby/png/cappi.png",
 "/teletubby/png/clusterlogo.png", "/teletubby/png/dick.png", "/teletubby/png/dolphin.png","/teletubby/png/duck.png", "/teletubby/png/joint.png", "/teletubby/png/smiley.png",
@@ -447,7 +412,7 @@ $(function () {
           },
           retina_detect: false
         };
-        console.log("hej", document.getElementById("particles-js").style.opacity);
+
 
         particlesJS("particles-js", particlesJSON);
       setTimeout(function() {
