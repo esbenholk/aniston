@@ -38,40 +38,36 @@ app.get("/", (req, res) => {
   });
 });
 //
-// app.get("/JenniferAnistonSuperfansDigitalTarotLandscape", (req, res) => {
-//   res.render("virtualexperience", {
-//     layout: "main"
-//   });
-// });
-// app.get("/archive", (req, res) => {
-//   res.render("5thdimension", {
-//     layout: "main"
-//   });
-// });
-// app.get("/emojicon", (req, res) => {
-//   res.render("emojicon", {
-//     layout: "secondary"
-//   });
-// });
+app.get("/JenniferAnistonSuperfansDigitalTarotLandscape", (req, res) => {
+  res.render("virtualexperience", {
+    layout: "main"
+  });
+});
+app.get("/archive", (req, res) => {
+  res.render("5thdimension", {
+    layout: "main"
+  });
+});
+app.get("/emojicon", (req, res) => {
+  res.render("emojicon", {
+    layout: "secondary"
+  });
+});
 app.get("/passthevirtualjoint", (req, res) => {
   res.render("livestream", {
     layout: "third"
   });
 });
-// app.get("/webcamlandscape", (req, res) => {
-//   res.render("webcamlandscape", {
-//     layout: "third"
-//   });
-// });
-app.get("/forwarding", (req, res) => {
-  res.render("forwardingmodule", {
+app.get("/webcamlandscape", (req, res) => {
+  res.render("webcamlandscape", {
     layout: "third"
   });
 });
-// app.get("/game", (req, res) => {
-//   res.render("game", {
-//     layout: "third"
-//   });
-// });
+
+app.get("/game", (req, res) => {
+  res.render("game", {
+    layout: "third"
+  });
+});
 
 http.listen(process.env.PORT || 8080, () => console.log("awake"));
