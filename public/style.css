@@ -38,15 +38,58 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
 }
 #frontpage {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 10vw;
+
   left: 0;
+  z-index: 1;
+}
+#background {
+  z-index: -999;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  object-fit: fill;
+}
+#header {
+  height: 20px;
+  width: 100%;
+  postion: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(237, 237, 237);
+  color: black;
+  display: flex;
+  justify-content: space-between;
+}
+.header-container {
+  display: flex;
+  white-space: nowrap;
+  letter-spacing: 4px;
+  font-size: 10px;
+  justify-content: center;
+  align-items: center;
+}
+p {
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 #frame {
@@ -80,24 +123,32 @@ body {
 }
 /* general */
 
-h1 {
-  font-size: 3vw;
+#stayvirtual {
+  postion: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  margin: 10px;
+  padding: 0;
+}
+
+#frontpagetext {
+  position: relative;
+  top: 100px;
+  right: 0;
+  font-size: 22px;
   width: 100%;
   color: white;
   background-color: black;
   text-align: center;
-}
-#frontpagetext {
-  position: fixed;
-  top: 40%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 9999999;
+  justify-content: center;
+  text-decoration: none;
 }
 .frontpagevideo {
-  height: 100vh;
+  z-index: -99;
+  position: relative;
   width: 100%;
-  filter: hue-rotate(150deg) invert(1);
+  border: white 2px solid;
 }
 #blocker {
   position: fixed;
@@ -115,7 +166,7 @@ h1 {
   animation: gradientAnimator 40s ease infinite;
 }
 
-/* #instructions {
+#instructions {
   width: 70%;
   height: 50%;
   position: fixed;
@@ -128,29 +179,43 @@ h1 {
   font-size: 1vw;
   line-height: auto;
   cursor: pointer;
-} */
+}
 .play {
   font-size: 30px;
 }
-
+#projects {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap-reverse;
+  justify-content: flex-end;
+  align-items: flex-start;
+  postion: absolute;
+  right: 0;
+  top: 0;
+  /* margin-right: 10px; */
+}
 .project {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 1vw;
-  border-radius: 20%;
-  border: 4px solid white;
-  padding: 5px;
-  width: 20%;
+  width: 100px;
+  object-fit: cover;
+  margin: 5px;
 }
 .projectimage {
   align-self: center;
-  width: 80%;
-  border-radius: 20%;
+  width: 100%;
+  max-width: 75px;
+  height: 75px;
+  object-fit: contain;
 }
-a {
+.desktop-title {
+  width: 100%;
+  font-size: 8px;
+  color: white;
   text-align: center;
+  /* margin-top: -10px; */
 }
 
 /* a {

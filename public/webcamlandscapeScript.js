@@ -34,6 +34,8 @@ document.getElementById("btn-open-room").onclick = function() {
   var predefinedRoomId = document.getElementById("room-id").value;
   instructions.style.display = "none";
   blocker.style.display = "none";
+  document.getElementById("roomregistration").style.display = "none";
+  document.getElementById("lounge").style.display = "inline-block";
   connection.open(predefinedRoomId, function(isRoomOpened, roomid, error) {
     if (error === "Room not available") {
       let otherRoomId = prompt(
@@ -51,6 +53,8 @@ document.getElementById("btn-join-room").onclick = function() {
   var predefinedRoomId = document.getElementById("room-id").value;
   instructions.style.display = "none";
   blocker.style.display = "none";
+  document.getElementById("roomregistration").style.display = "none";
+  document.getElementById("lounge").style.display = "inline-block";
   connection.join(predefinedRoomId, function(isRoomOpened, roomid, error) {
     if (error === "Room not available") {
       let otherRoomId = prompt(
@@ -70,7 +74,7 @@ document.getElementById("3d-toggle").onclick = function() {
   blocker.style.display = "inline-block";
   document.getElementById("waitingroom").style.display = "none";
   var streams = document.getElementsByTagName("video");
-  console.log(streams);
+
   for (var i = 0; i < streams.length; i++) {
     videoIdNumbers.push(streams[i].id);
   }
@@ -135,7 +139,7 @@ function init(streamArray) {
 
   controls.addEventListener("unlock", function() {
     blocker.style.display = "block";
-    instructions.style.display = "";
+    instructions.style.display = "block";
   });
   scene.add(controls.getObject());
 
@@ -311,4 +315,36 @@ function animate() {
     // }
   }
   renderer.render(scene, camera);
+}
+
+ticker("ticker1");
+ticker("ticker2");
+
+function ticker(element) {
+  console.log("move ticker", element);
+  var ticker = document.getElementById(element);
+  var headlines = ticker.querySelector(".headlines");
+  var links = headlines.getElementsByTagName("a");
+  var left = headlines.offsetLeft;
+  var animId;
+
+  headlines.addEventListener("mouseenter", function() {
+    cancelAnimationFrame(animId);
+  });
+
+  headlines.addEventListener("mouseleave", function() {
+    moveHeadLines();
+  });
+
+  moveHeadLines();
+
+  function moveHeadLines() {
+    left--;
+    if (left <= -links[0].offsetWidth) {
+      left += links[0].offsetWidth;
+      headlines.appendChild(links[0]);
+    }
+    headlines.style.left = left + "px";
+    animId = requestAnimationFrame(moveHeadLines);
+  }
 }

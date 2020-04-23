@@ -21,12 +21,29 @@
 				justify-content: center;
 				align-items: center;
 			}
+			#roomregistration{
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+			#lounge{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				border: 2px solid blue;
+			}
 			#room-id{
 				border: 4px solid rgb(229, 0, 255);
 				width: 50%;
 				border-radius: 20px;
 				font-size: 30px;
 				text-align: center;
+			}
+			#lounge{
+				display: none;
 			}
 			#buttons{
 				display: flex;
@@ -49,16 +66,16 @@
 				flex-direction: row;
 				justify-content: space-around;
 				flex-wrap: wrap;
-				width: 100%;
+
 			}
 			video{
 				width: 100%;
 			}
 			.videoelement{
-				width: 25%;
+				width: 30%;
 			}
 			#blocker {
-				display: none;
+			display: none;
 				z-index: 0;
 			  position: fixed;
 			  left: 0;
@@ -66,6 +83,10 @@
 			  width: 100%;
 			  height: 100%;
 			  background-color: rgba(0,20,200,0.5);
+			}
+			.play{
+				position: relative;
+				top: 50%;
 			}
 
 			#instructions {
@@ -76,21 +97,49 @@
 			  left: 50%;
 			  top: 20%;
 			  transform: translateX(-50%);
-			  color: blue;
-			  background-color: pink;
+			  color: white;
+			  background-color: rgba(0,20,200,0.5);
 			  text-align: center;
 			  font-family: Arial;
 			  font-size: 1vw;
 			  line-height: auto;
 			  cursor: pointer;
 			}
+			.headlines {
+	          white-space: nowrap;
+	          position: absolute;
+	          z-index: 8;
+	          font-family: "friends";
+	          left: 0;
+	        }
+
+	        a {
+	          text-decoration: none;
+	          color: white;
+			  font-size: 40px
+	        }
+
+	        a:hover {
+	          color: yellow;
+	          text-decoration: underline;
+
+	        }
+
+
+	        .ticker {
+	          position: relative;
+	          overflow: hidden;
+	          height: 50px;
+
+	        }
 		</style>
 	</head>
 	<body>
         <!-- <video id="video" class="video" autoplay></video> -->
 		<div id="blocker">
 			<div id="instructions">
-				enjoy eachothers self(ie)s™<br/>
+				welcome to the Webcam Landscape™<br/>
+				a HOUSE OF KILLING™ production <br/>
 
 				<span class="play">Click to play</span>
 				<br /><br />
@@ -103,7 +152,7 @@
 
 		</div>
 		<div id="waitingroom">
-
+			<div id="roomregistration">
 			  <input
 				type="text"
 				id="room-id"
@@ -114,11 +163,26 @@
 			  />
 			<div id="buttons">
 				<button id="btn-open-room">Open Room</button>
-				<button id="btn-join-room">Join Room</button><hr>
+				<button id="btn-join-room">Join Room</button>
 			</div>
-			<p> wait for your party to arrive</p>
-			<div id="container"></div>
-			<button id="3d-toggle">click here when you have all arrived</button><hr>
+			</div>
+			<div id="lounge">
+				<div id="ticker1" class="ticker">
+		        <div class="headlines">
+		            <a>💕 wait for your party to arrive</a><a>💕 wait for your party to arrive</a><a>💕 wait for your party to arrive</a><a>💕 wait for your party to arrive</a><a>💕 wait for your party to arrive</a><a>💕 wait for your party to arrive</a>
+		        </div>
+		        </div>
+
+
+				<div id="container"></div>
+				<div id="ticker2" class="ticker">
+		        <div id="3d-toggle" class="headlines">
+					 <a>💕 click here when you have all arrived</a> <a>💕 click here when you have all arrived</a> <a>💕 click here when you have all arrived</a> <a>💕 click here when you have all arrived</a> <a>💕 click here when you have all arrived</a> <a>💕 click here when you have all arrived</a> <a>💕 click here when you have all arrived</a>
+		        </div>
+		        </div>
+
+			</div>
+
 		</div>
 
 
