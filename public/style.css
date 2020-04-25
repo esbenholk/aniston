@@ -24,8 +24,15 @@
   }
 }
 /* main layout */
-
+:root {
+  --headerheight: 20px;
+  --sidemargin: 15px;
+  --doubleSideMargin: 30px;
+  --finderGrey: rgb(237, 237, 237);
+  --buttonheight: 10px;
+}
 body {
+  width: 100%;
   box-sizing: border-box;
   background: radial-gradient(
     circle,
@@ -49,7 +56,6 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
-
   left: 0;
   z-index: 1;
 }
@@ -65,25 +71,38 @@ body {
   object-fit: fill;
 }
 #header {
-  height: 20px;
+  height: var(--headerheight);
+  position: sticky;
   width: 100%;
-  postion: fixed;
   top: 0;
-  left: 0;
   margin: 0;
   padding: 0;
-  background-color: rgb(237, 237, 237);
+  background-color: var(--finderGrey);
   color: black;
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
+  padding-left: var(--sidemargin);
+  border: 1px black solid;
+}
+#battery {
+  height: 400%;
+  margin: -20px;
+  z-index: -999;
 }
 .header-container {
+  max-width: 50%;
   display: flex;
   white-space: nowrap;
   letter-spacing: 4px;
   font-size: 10px;
-  justify-content: center;
   align-items: center;
+}
+.rightleaning {
+  position: relative;
+  right: 0;
+  justify-content: flex-end;
+  padding-right: var(--doubleSideMargin);
 }
 p {
   margin-top: 0;
@@ -92,64 +111,97 @@ p {
   padding-bottom: 0;
 }
 
-#frame {
+.window {
+  overflow: hidden;
+  width: 50%;
+  height: 40%;
+  border: 2px var(--finderGrey) solid;
+}
+.file {
   width: 100%;
   height: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 99999999999;
-  pointer-events: none;
 }
-@-webkit-keyframes glow {
-  from {
-    box-shadow: inset 0 0 50px #ffe900, /* inner white */ inset 20px 0 80px #f0f,
-      /* inner left magenta short */ inset -20px 0 80px #0ff,
-      /* inner right cyan short */ inset 10px 0 10px #f0f,
-      /* inner left magenta broad */ inset -20px 0 3px #0ff,
-      /* inner right cyan broad */ 0 0 100px #ffe900,
-      /* outer white */ -10px 0 80px #f0f,
-      /* outer left magenta */ 10px 0 10px #0ff; /* outer right cyan */
-  }
-  to {
-    box-shadow: inset 0 0 50px #ffe900, /* inner white */ inset 10px 0 10px #f0f,
-      /* inner left magenta short */ inset -20px 0 80px #0ff,
-      /* inner right cyan short */ inset 20px 0 10px #f0f,
-      /* inner left magenta broad */ inset -20px 0 10px #0ff,
-      /* inner right cyan broad */ 0 0 10px #ffe900,
-      /* outer white */ -10px 0 80px #f0f,
-      /* outer left magenta */ 10px 0 10px #0ff; /* outer right cyan */
-  }
-}
-/* general */
-
-#stayvirtual {
-  postion: absolute;
-  top: 0;
-  left: 0;
-  width: 300px;
-  margin: 10px;
-  padding: 0;
-}
-
-#frontpagetext {
-  position: relative;
-  top: 100px;
+#projects {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap-reverse;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: absolute;
   right: 0;
-  font-size: 22px;
-  width: 100%;
-  color: white;
-  background-color: black;
-  text-align: center;
+  top: var(--headerheight);
+  margin: 10px;
+}
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  text-decoration: none;
+  width: 100px;
+  object-fit: cover;
+  margin: 5px;
 }
-.frontpagevideo {
-  z-index: -99;
-  position: relative;
+.projectimage {
+  align-self: center;
   width: 100%;
-  border: white 2px solid;
+  max-width: 75px;
+  height: 75px;
+  object-fit: contain;
 }
+.desktop-title {
+  width: 100%;
+  font-size: 8px;
+  color: white;
+  text-align: center;
+  /* margin-top: -10px; */
+}
+
+/* css for animating application windows */
+.invisible {
+  display: none;
+}
+.open {
+  display: inline-block;
+}
+.window {
+  margin: 50px;
+}
+.windowHeader {
+  height: var(--headerheight);
+  background-color: var(--finderGrey);
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+}
+.green {
+  background-color: rgb(0, 255, 42);
+}
+.yellow {
+  background-color: rgb(238, 255, 0);
+}
+.red {
+  background-color: rgb(255, 0, 0);
+}
+.windowbutton {
+  border-radius: 50%;
+  height: var(--buttonheight);
+  width: var(--buttonheight);
+  display: flex;
+  white-space: nowrap;
+}
+.filename {
+  font-size: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* game design */
 #blocker {
   position: fixed;
   left: 0;
@@ -183,47 +235,8 @@ p {
 .play {
   font-size: 30px;
 }
-#projects {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap-reverse;
-  justify-content: flex-end;
-  align-items: flex-start;
-  postion: absolute;
-  right: 0;
-  top: 0;
-  /* margin-right: 10px; */
-}
-.project {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100px;
-  object-fit: cover;
-  margin: 5px;
-}
-.projectimage {
-  align-self: center;
-  width: 100%;
-  max-width: 75px;
-  height: 75px;
-  object-fit: contain;
-}
-.desktop-title {
-  width: 100%;
-  font-size: 8px;
-  color: white;
-  text-align: center;
-  /* margin-top: -10px; */
-}
 
-/* a {
-  padding-right: 40px;
-  text-decoration: none;
-  color: white;
-} */
-
+/* css for emojicon */
 #ticker1 {
   position: relative;
   overflow: hidden;
