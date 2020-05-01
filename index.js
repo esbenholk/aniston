@@ -7,14 +7,9 @@ const cookieSession = require("cookie-session");
 const { hash, compare } = require("./utils/bcrypt");
 const csurf = require("csurf");
 const archive = require("./public/data.json");
-const fs = require("fs");
-const options = {
-  key: fs.readFileSync("www_houseofkilling_com.key"),
-  cert: fs.readFileSync("www_houseofkilling_com.pem")
-};
 
-var https = require("https").createServer(options, app);
-var io = require("socket.io")(https);
+var http = require("http").createServer(app);
+var io = require("socket.io")(http);
 
 app.engine("handlebars", hb()); //handlebars is construction languae
 app.set("view engine", "handlebars"); //handlebar is templating language
@@ -75,4 +70,4 @@ app.get("/game", (req, res) => {
   });
 });
 
-https.listen(process.env.PORT || 8080, () => console.log("awake"));
+http.listen(process.env.PORT || 8080, () => console.log("awake"));
