@@ -1,6 +1,5 @@
 import * as THREE from "/three/build/three.module.js";
 import { PointerLockControls } from "/three/examples/jsm/controls/PointerLockControls.js";
-
 var connection = new RTCMultiConnection();
 connection.socketURL = "https://rtcmulticonnection.herokuapp.com:443/";
 connection.session = {
@@ -30,7 +29,7 @@ connection.onstreamended = function(event) {
     mediaElement.parentNode.parentNode.removeChild(mediaElement.parentNode);
   }
 };
-ani;
+
 document.getElementById("btn-open-room").onclick = function() {
   var predefinedRoomId = document.getElementById("room-id").value;
   instructions.style.display = "none";
