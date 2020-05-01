@@ -111,16 +111,6 @@ p {
   padding-bottom: 0;
 }
 
-.window {
-  overflow: hidden;
-  width: 50%;
-  height: 40%;
-  border: 2px var(--finderGrey) solid;
-}
-.file {
-  width: 100%;
-  height: 100%;
-}
 #projects {
   height: 80%;
   display: flex;
@@ -132,6 +122,7 @@ p {
   right: 0;
   top: var(--headerheight);
   margin: 10px;
+  z-index: 0;
 }
 .project {
   display: flex;
@@ -165,7 +156,18 @@ p {
   display: inline-block;
 }
 .window {
-  margin: 50px;
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  border: 2px var(--finderGrey) solid;
+}
+
+.file {
+  width: 100%;
+  height: 100%;
 }
 .windowHeader {
   height: var(--headerheight);
