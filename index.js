@@ -32,6 +32,15 @@ io.on("connection", socket => {
   });
 });
 
+app.get("*", (req, res) => {
+  if (
+    window.location === "http://houseofkilling.com/" ||
+    window.location === "http://www.houseofkilling.com"
+  ) {
+    window.location = "https://www.houseofkilling.com";
+  }
+});
+
 app.get("/", (req, res) => {
   res.render("frontpage", {
     layout: "main"
