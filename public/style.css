@@ -58,6 +58,7 @@ body {
   height: 100%;
   left: 0;
   z-index: 1;
+  overflow: hidden;
 }
 #background {
   z-index: -999;
@@ -147,7 +148,10 @@ p {
   text-align: center;
   /* margin-top: -10px; */
 }
-
+#desktop {
+  width: 500%;
+  height: 500%;
+}
 /* css for animating application windows */
 .invisible {
   display: none;
@@ -156,13 +160,17 @@ p {
   display: inline-block;
 }
 .window {
-  position: fixed;
+  position: absolute;
   width: 300px;
   height: 300px;
   left: 0;
   top: 0;
   overflow: hidden;
   border: 2px var(--finderGrey) solid;
+}
+.currentWindow {
+  border: 2px blue solid;
+  z-index: 999999;
 }
 
 .file {
