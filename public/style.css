@@ -242,8 +242,24 @@ p {
   line-height: auto;
   cursor: pointer;
 }
-.play {
+.importantNews {
+  font-family: "friends";
+  font-size: 25px;
+}
+.instagramlink {
+  text-decoration: none;
+  color: blue;
   font-size: 30px;
+  font-family: monospace;
+}
+.play {
+  font-family: "friends";
+  font-size: 30px;
+  padding: 30px;
+  color: yellow;
+}
+.soundcloud {
+  display: none;
 }
 
 /* css for emojicon */
