@@ -229,7 +229,7 @@ p {
 }
 
 #instructions {
-  width: 70%;
+  width: 90%;
   height: 50%;
   position: fixed;
   left: 50%;
@@ -243,20 +243,18 @@ p {
   cursor: pointer;
 }
 .importantNews {
-  font-family: "friends";
   font-size: 25px;
 }
 .instagramlink {
   text-decoration: none;
-  color: blue;
-  font-size: 30px;
-  font-family: monospace;
+  color: #00ffe9;
+  font-size: rem(30);
+  font-family: "friends";
 }
 .play {
   font-family: "friends";
   font-size: 30px;
   padding: 30px;
-  color: yellow;
 }
 .soundcloud {
   display: none;
