@@ -4,8 +4,39 @@
 		<title>HOUSE OF KILLING</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<link type="text/css" rel="stylesheet" href="archivestyle.css">
+		<!-- <link type="text/css" rel="stylesheet" href="archivestyle.css"> -->
 		<style>
+			body{
+				background-color: blue;
+				box-sizing: border-box;
+				margin:0;
+				padding:0;
+			}
+			.headline{
+				color: rgba(0,0,0,0);
+     			-webkit-text-fill-color: rgba(0,0,0,0); /* Will override color (regardless of order) */
+     			-webkit-text-stroke-width: 1px;
+     			-webkit-text-stroke-color: white;
+				font-family: sans-serif;
+				font-size: 50px;
+				margin:10px;
+				padding:0;
+				font-style: italic;
+			}
+			.smaller{
+				-webkit-text-fill-color: white;
+				-webkit-text-stroke-width: 0;
+				font-size: 20px;
+				font-weight: 100;
+			}
+			.paragraph{
+				color: white;
+				margin:10px;
+				font-size: 12px;
+				max-width: 40%;
+				font-style: italic;
+			}
+
 			#waitingroom{
 				width: 100%;
 				height: 100%;
@@ -18,29 +49,32 @@
 				z-index: 9;
 				display: flex;
 				flex-direction: column;
-				justify-content: center;
-				align-items: center;
+				justify-content: space-evenly;
+
 			}
 			#roomregistration{
 				width: 100%;
 				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
+				flex-direction: row;
+				padding-bottom: 10px;
 			}
 			#lounge{
 				display: flex;
 				flex-direction: column;
-				justify-content: center;
-				align-items: center;
+				justify-content: flex-end;
 				border: 2px solid blue;
+				margin: 10px;
 			}
 			#room-id{
-				border: 4px solid rgb(229, 0, 255);
-				width: 50%;
-				border-radius: 20px;
 				font-size: 30px;
-				text-align: center;
+				text-align: left;
+				margin-left:10px;
+				font-size: 12px;
+				color: white;
+				background-color: rgba(0,0,0,0);
+				border: 0;
+				border-bottom: 1px white solid;
+				width:50%;
 			}
 			#lounge{
 				display: none;
@@ -48,14 +82,11 @@
 			#buttons{
 				display: flex;
 				white-space: nowrap;
-				margin: 10px;
 			}
 			button{
-				background: rgb(229, 0, 255);
-				borer: none;
-				border-radius: 10%;
-				border-radius: 20px;
-				font-size: 30px;
+				border: 1px white solid;
+				font-size: 12px;
+				margin-right: 10px;
 			}
 			button:focus{
 				decoration: none;
@@ -64,7 +95,7 @@
 			#container{
 				display: flex;
 				flex-direction: row;
-				justify-content: space-around;
+				justify-content: left
 				flex-wrap: wrap;
 
 			}
@@ -132,26 +163,37 @@
 	          height: 50px;
 
 	        }
+			.toggle{
+				position: fixed;
+				right:0;
+				bottom: 0;
+				margin: 10px;
+			}
 		</style>
 	</head>
 	<body>
         <!-- <video id="video" class="video" autoplay></video> -->
 		<div id="blocker">
 			<div id="instructions">
-				welcome to the Webcam Landscape™<br/>
-				a HOUSE OF KILLING™ production <br/>
+				<h1 class="headline"><small class="smaller">welcome to the <br/></small>WEBCAM LANDSCAPE™<br/></h1>
 
-				<span class="play">Click to play</span>
-				<br /><br />
+
 				Move: WASD<br/>
 				Jump: SPACE<br/>
 				Look: MOUSE<br/>
                 escape: ESC
+				<br /><br />
+				<span class="play headline">Click to play</span>
 
 			</div>
 
 		</div>
+
 		<div id="waitingroom">
+			<h1 class="headline">HOUSE OF KILLING <br> studio, presents <br><small class="smaller">a gamefied 3D livestreaming concept</small></h1>
+			<h1 class="headline cursive">BETA </h1>
+			<p class="paragraph">{this is a beta deployment  of 3D livestreaming concept. It renders you and your e-friends on 3D shapes in a gamified 3D environment.<br>
+				{to try it, open a room below, by creating a new room-name and clicking "create room", or by joining an e-friends room by typing their room-name and clicking "join room"}}{when you and your e-friends have all collected here on this page, click "go 3D", and go gaming}</p>
 			<div id="roomregistration">
 			  <input
 				type="text"
@@ -167,20 +209,8 @@
 			</div>
 			</div>
 			<div id="lounge">
-				<div id="ticker1" class="ticker">
-		        <div class="headlines">
-		            <a>💕 wait for your party to arrive</a><a>💕 wait for your party to arrive</a><a>💕 wait for your party to arrive</a><a>💕 wait for your party to arrive</a><a>💕 wait for your party to arrive</a><a>💕 wait for your party to arrive</a>
-		        </div>
-		        </div>
-
-
 				<div id="container"></div>
-				<div id="ticker2" class="ticker">
-		        <div id="3d-toggle" class="headlines">
-					 <a>💕 click here when you have all arrived</a> <a>💕 click here when you have all arrived</a> <a>💕 click here when you have all arrived</a> <a>💕 click here when you have all arrived</a> <a>💕 click here when you have all arrived</a> <a>💕 click here when you have all arrived</a> <a>💕 click here when you have all arrived</a>
-		        </div>
-		        </div>
-
+				<button id="3d-toggle" class="toggle">go 3D</button>
 			</div>
 
 		</div>

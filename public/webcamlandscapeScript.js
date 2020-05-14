@@ -206,6 +206,7 @@ function init(streamArray) {
     texture.magFilter = THREE.LinearFilter;
     texture.format = THREE.RGBFormat;
     createShape(texture);
+    createPane(texture);
   }
 
   function createShape(texture) {
@@ -214,9 +215,20 @@ function init(streamArray) {
     for (let i = 0; i < 3; i++) {
       var box = new THREE.Mesh(boxGeometry, boxMaterial);
       box.position.x = Math.floor(Math.random() * 20 - 10) * 50;
-      box.position.y = Math.floor(Math.random() * 20) * 10;
+      box.position.y = Math.floor(Math.random() * 20) * 50;
       box.position.z = Math.floor(Math.random() * 20 - 10) * 50;
       boxes.push(box);
+      scene.add(box);
+    }
+  }
+  function createPane(texture) {
+    let boxMaterial = new THREE.MeshBasicMaterial({ map: texture });
+    var boxGeometry = new THREE.BoxBufferGeometry(100, 100, 0);
+    for (let i = 0; i < 1; i++) {
+      var box = new THREE.Mesh(boxGeometry, boxMaterial);
+      box.position.x = Math.floor(Math.random() * 20 - 10) * 10;
+      box.position.y = 50;
+      box.position.z = Math.floor(Math.random() * 20 - 10) * 10;
       scene.add(box);
     }
   }
@@ -317,34 +329,34 @@ function animate() {
   renderer.render(scene, camera);
 }
 
-ticker("ticker1");
-ticker("ticker2");
-
-function ticker(element) {
-  console.log("move ticker", element);
-  var ticker = document.getElementById(element);
-  var headlines = ticker.querySelector(".headlines");
-  var links = headlines.getElementsByTagName("a");
-  var left = headlines.offsetLeft;
-  var animId;
-
-  headlines.addEventListener("mouseenter", function() {
-    cancelAnimationFrame(animId);
-  });
-
-  headlines.addEventListener("mouseleave", function() {
-    moveHeadLines();
-  });
-
-  moveHeadLines();
-
-  function moveHeadLines() {
-    left--;
-    if (left <= -links[0].offsetWidth) {
-      left += links[0].offsetWidth;
-      headlines.appendChild(links[0]);
-    }
-    headlines.style.left = left + "px";
-    animId = requestAnimationFrame(moveHeadLines);
-  }
-}
+// ticker("ticker1");
+// ticker("ticker2");
+//
+// function ticker(element) {
+//   console.log("move ticker", element);
+//   var ticker = document.getElementById(element);
+//   var headlines = ticker.querySelector(".headlines");
+//   var links = headlines.getElementsByTagName("a");
+//   var left = headlines.offsetLeft;
+//   var animId;
+//
+//   headlines.addEventListener("mouseenter", function() {
+//     cancelAnimationFrame(animId);
+//   });
+//
+//   headlines.addEventListener("mouseleave", function() {
+//     moveHeadLines();
+//   });
+//
+//   moveHeadLines();
+//
+//   function moveHeadLines() {
+//     left--;
+//     if (left <= -links[0].offsetWidth) {
+//       left += links[0].offsetWidth;
+//       headlines.appendChild(links[0]);
+//     }
+//     headlines.style.left = left + "px";
+//     animId = requestAnimationFrame(moveHeadLines);
+//   }
+// }
